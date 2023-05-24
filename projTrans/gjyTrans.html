@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GJY's trans pages</title>
+    <style>
+        div{
+            height: 30vw;
+            width: 30vw;
+            transition: 1s;
+            margin: 5px;
+        }
+        #idDiv1{
+            transition-timing-function: ease;
+            background-color: hsla(0, 100%, 50%,0.7);
+        }
+        #idDiv2{
+            transition-timing-function: linear;
+            background-color: hsla(39, 100%, 50%,0.7);
+        }
+        #idDiv3{
+            transition-timing-function: ease-in;
+            background-color: hsla(60, 100%, 50%,0.7);
+        }
+        #idDiv4{
+            transition-timing-function: ease-out;
+            background-color: hsla(120, 100%, 25%,0.7);
+        }
+        #idDiv5{
+            transition-timing-function: ease-in-out;
+            background-color: hsla(240, 100%, 50%,0.7);
+        } 
+    </style>
+    <script>
+        function mOk(){
+            let arrDiv = document.querySelectorAll('div');
+            let txtBtn = document.getElementById('Btn');
+            let lWidth = 30;
+            if (txtBtn.textContent == "변신50"){
+                txtBtn.textContent="변신100";
+                lWidth = "50vw";
+            }else if(txtBtn.textContent == "변신100"){
+                txtBtn.textContent="초기화";
+                lWidth = "100vw";
+            }
+            else{
+                txtBtn.textContent="변신50";
+                lWidth = "30vw";
+            }
+            arrDiv.forEach((a)=>{
+                a.style.width=lWidth;
+            })
+        }
+    </script>
+</head>
+<body>
+    <button onclick="mOk();" id="Btn">변신50</button>
+    <div id="idDiv1">ease</div>
+    <div id="idDiv2">linear</div>
+    <div id="idDiv3">ease in</div>
+    <div id="idDiv4">ease out</div>
+    <div id="idDiv5">ease in out</div>
+</body>
+</html>

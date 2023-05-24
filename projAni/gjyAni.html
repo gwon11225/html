@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gjy's page</title>
+    <style>
+        #idPrnt{
+            width: 80vw;
+            height: 80vh;
+            border: 1px solid black;
+            background-color: hsla(240, 100%, 50%,0.3);
+            position: relative;
+            padding: 60px;
+        }
+        #idChld{
+            width: 60px;
+            height: 60px;
+            background-color: hsla(0, 100%, 50%);
+            position: absolute;
+        }
+        @keyframes aniColor {
+            from {background-color:hsla(0,100%,50%,1);width: 60px;height: 60px;}
+            to {background-color:hsla(240,100%,50%,1);width: 60px;height: 150px;}
+        }
+        @keyframes aniColor5 {
+            20% {background-color: hsla(0, 100%, 50%,1);width: 60;height: 60; left: 60px; top: 60px;}
+            40% {background-color: hsla(60, 100%, 50%,1);width: 60;height: 60; left: 70px; top: 70px;}
+            60% {background-color: hsla(120, 100%, 50%,1);width: 60;height: 60; left: 80px; top: 80px;}
+            80% {background-color: hsla(180, 100%, 50%,1);width: 60;height: 60; left: 90px; top: 90px;}
+            100% {background-color: hsla(240, 100%, 50%,1);width: 60;height: 60; left: 100px; top: 100px;}
+        }
+    </style>
+    <script>
+        function mOk(pGbn){
+            let lChld = document.getElementById("idChld");
+            if(pGbn == 'start'){
+                lChld.style.animation="aniColor 4s backwards";
+            }else if(pGbn == 'color'){
+                lChld.style.animation="aniColor5 4s infinite alternate";
+            }else if(pGbn == 'reset'){
+                lChld.style.animation="none";
+            }else if(pGbn == 'rel'){
+                lChld.style.position = 'relative';
+                lChld.style.animation="aniColor5 5s forwards infinite";
+            }else if(pGbn == 'abs'){
+                lChld.style.position='absolute';
+                lChld.style.animation="aniColor5 5s forwards";
+            }else if(pGbn == 'fix'){
+                lChld.style.position='fixed';
+                lChld.style.animation="aniColor5 5s forwards";
+            }else if(pGbn == 'stat'){
+                lChld.style.position='static';
+                lChld.style.animation="aniColor5 5s forwards";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="mOk('start')">start</button>
+    <button onclick="mOk('color')">color</button>
+    <button onclick="mOk('rel')">relative</button>
+    <button onclick="mOk('abs')">absolute</button>
+    <button onclick="mOk('fix')">fixed</button>
+    <button onclick="mOk('stat')">static</button>
+    <button onclick="mOk('reset')">reset</button>
+    <div>stay foolish!!</div>
+    <div>just do it!!</div>
+    <div>are you ready?</div>
+    <div>never give up!!</div>
+    <div>be ambitious</div>
+    <div id="idPrnt">
+        <div id="idChld"></div>
+    </div>
+</body>
+</html>

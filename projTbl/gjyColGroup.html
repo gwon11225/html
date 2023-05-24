@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GJY's ColGroup</title>
+    <style>
+        table,tr,th,td{
+            border: 1px solid aquamarine;
+            border-collapse: collapse;
+        }
+        th,td{
+            color: skyblue;
+        }
+        th{
+            background-color: bisque;
+            height: 80px;
+        }
+        td{
+            height: 50px;
+            vertical-align: bottom;
+            padding: 15px;
+        }
+        .right{
+            text-align: right;
+        }
+        .center{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table style="width:100%;">
+        <colgroup>
+            <col span="1" style="width:30%; background-color: mediumspringgreen;">
+            <col span="1" style="width:35%; background-color: steelblue;">
+            <col span="1" style="width:30%; background-color: steelblue;">
+        </colgroup>
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>2345231</td>
+            <td class="center">My first HTML</td>
+            <td class="right">$50</td>
+        </tr>
+        <tr>
+            <td>1244536</td>
+            <td class="center">My first CSS</td>
+            <td class="right">$100</td>
+        </tr>
+    </table>
+</body>
+</html>

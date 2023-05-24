@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <title>let's study about table!!</title>
+        <style>
+            h1{
+                text-align: center;
+                color : rgb(92, 115, 186);
+            }
+            table{
+                /*border: 1px solid aqua;*/
+                /*border-collapse: collapse;*/
+                background-color: aquamarine;
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th,td{
+                border-radius: 10px;
+                border: 1px solid black;
+            }
+            /* th{
+                border: 1px solid aquamarine;
+                background-color: aquamarine;
+            } */
+            /* td{
+                /* border: 3px inset aquamarine; */
+            /*}*/
+        </style>
+    </head>
+    <body>
+        <h1>welcome to world of table!!</h1>
+        <table>
+            <tr>
+                <colgroup>
+                    <col style="width:5%;background-color: yellow;">
+                    <col style="width:5%; background-color: blueviolet;">
+                    <col style="width:30%; border:1px double black;">
+                    <col style="width:30%">
+                </colgroup>
+                <th colspan="3">
+                    class
+                    numver
+                    name
+                </th>
+                <th>
+                    tel
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td rowspan="2">
+                    7
+                </td>
+                <td>
+                    권지용
+                </td>
+                <td>
+                    010 - 1111 - 1111
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2
+                </td>
+                <!--
+                <td>
+                    12
+                </td>
+                -->
+                <td rowspan="2">
+                    서승훈
+                </td>
+                <td>
+                    010-2222-2222
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3
+                </td>
+                <td>
+                    12
+                </td>
+                <!-- <td>
+                    서승훈
+                </td> -->
+                <td>
+                    010-2222-2222
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    4
+                </td>
+                <td>
+                    12
+                </td>
+                <td colspan="2">
+                    서승훈
+                </td>
+                <!-- <td>
+                    010-2222-2222
+                </td> -->
+            </tr>
+            <tr>
+                <td>
+                    5
+                </td>
+                <td>
+                    12
+                </td>
+                <td>
+                    서승훈
+                </td>
+                <td>
+                    010-2222-2222
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>class</td>
+                <td>number</td>
+                <td>name</td>
+                <td>tel</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>7</td>
+                <td>권지용</td>
+                <td>010-1111-2222</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>7</td>
+                <td>권지용</td>
+                <td>010-1111-2222</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>7</td>
+                <td>권지용</td>
+                <td>010-1111-2222</td>
+            </tr>
+        </table>
+    </body>
+</html>
