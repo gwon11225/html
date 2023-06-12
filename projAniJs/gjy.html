@@ -4,51 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gjy's page</title>
+    <title>kcd's class!!</title>
     <style>
-        #idPrnt{
+        #idPrnt {
             position: relative;
             width: 400px;
             height: 400px;
-            background-color: hsla(60, 100%, 80%,1);
+            background-color: hsla(60, 100%, 80%, 1);
         }
-        #idChld{
+
+        #idChld {
             position: absolute;
             width: 50px;
             height: 50px;
-            background-color: hsla(0, 100%, 50%,1);
-            top: 0%;
-            left: 0%;
+            background-color: hsla(0, 100%, 80%, 1);
         }
     </style>
-    <script>
-        function mOk(){
-            lBtn = document.getElementById("idBtn");
-            lChld = document.getElementById("idChld")
-            if(lBtn.textContent.trim() == 'start'){
-                lChld.style.top = "0%";
-                lChld.style.left = "0%";
-                lBtn.textContent = 'stop';
-            }else{
-                lBtn.textContent = 'start';
-            }
-            function mintrvl(){
-                let lLeft = lChld.style.left
-                lLeft = Number(lLeft.substring(0,lLeft.length-1));
-                let lTop = lChld.style.top
-                lTop = Number(lTop.substring(0,lTop.length-1));
-                lLeft += 2
-                lTop += 2
-            }
-        }
 
-        
+    <script>
+        var idIntrvl;
+        function mOk() {
+            let lBtn = document.getElementById("idBtn");
+            let lchld = document.getElementById("idChld");
+            
+            if(lBtn.textContent.trim()=="start") {
+                lchld.style.left="0%";
+                lchld.style.top="0%";
+                lBtn.textContent = "stop";
+                idIntrvl=setInterval(mIntrvl, 50);
+            }
+            else {
+                clearInterval(idIntrvl);
+                lBtn.textContent = "start";
+
+            }
+            function mIntrvl() {
+                let lLeft=lchld.style.left;
+                let iLeft=Number(lLeft.substring(0, lLeft.length-1));
+                iLeft=(iLeft+2)%52;
+
+                let lTop=lchld.style.top;
+                let iTop=Number(lTop.substring(0, lTop.length-1));
+                iTop=(iTop+2)%52;
+                
+                lchld.style.left = iLeft + '%';
+                lchld.style.top = iTop + '%';
+            }
+            
+        }
     </script>
 </head>
 <body>
-    <button onclick="mOk()" id="idBtn">start</button>
+    <button id="idBtn" onclick="mOk();">start</button>
     <div id="idPrnt">
-        <div id="idChld"></div>
+        <div id="idChld">
+            
+        </div>
     </div>
 </body>
 </html>
